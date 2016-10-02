@@ -7,6 +7,7 @@ var cheerio = require('cheerio');
 var request = require('request');
 
 BASE_URL = "http://www2.nngov.com/newport-news/offenses/"
+NN_DATA_PATH = '../../newportnews'
 FEEDS = [
   "suntxt.htm",
   // "montxt.htm",
@@ -32,10 +33,13 @@ function checkUrls() {
     console.log(BASE_URL + path)
     request(BASE_URL + path, function(error, res, body) {
         console.log(body);
-        // debugger;
-        var dest = fs.createWriteStream(getDateName(body) + '.html');
-        debugger
-        res.pipe(dest);
+        var dest = getDateName(body) + '.html';
+        fs.writeFile(dest, body, function (err,data) {
+          if (err) {
+            return console.log(err);
+          }
+          console.log(data);
+        });
     })
   })
 }
