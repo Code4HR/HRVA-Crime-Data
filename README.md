@@ -4,12 +4,8 @@ Aggregates Public Crime Data Dumps
 
 
 # Overview
-Directory overview for master.
-- `data` - top level data folder
-  - CITY
-    - YEAR
-      - MONTH
-        - DAY
+- `data` top level data folder
+  - CITY files will be named by their timestamp format.
 - `src`
   - city_name
 
