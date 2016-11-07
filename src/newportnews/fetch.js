@@ -1,14 +1,15 @@
 /**
 Fetch Sheets
 **/
+"use strict"
 var fs = require('fs');
 var fetch = require('node-fetch');
 var cheerio = require('cheerio');
 var request = require('request');
 
-BASE_URL = "http://www2.nngov.com/newport-news/offenses/"
-NN_DATA_PATH = '../../data/newportnews/'
-FEEDS = [
+var BASE_URL = "http://www2.nngov.com/newport-news/offenses/"
+var NN_DATA_PATH = '../../data/newportnews/'
+var FEEDS = [
   "suntxt.htm",
   "montxt.htm",
   "tuetxt.htm",
@@ -19,7 +20,7 @@ FEEDS = [
 ]
 
 function getDateName(dom) {
-  $ = cheerio.load(dom, {
+  var $ = cheerio.load(dom, {
       normalizeWhitespace: true,
       xmlMode: true
   });
