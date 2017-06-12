@@ -11,7 +11,7 @@ Aggregates Public Crime Data Dumps
 
 # Localities Supported
 - Newport News
-
+- [Hampton](https://moto.data.socrata.com/dataset/Hampton-Police-Department/pwqw-9u3z/data)
 
 # LICENSE
 ----
